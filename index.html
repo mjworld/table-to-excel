@@ -1,0 +1,57 @@
+<html><head>
+  <meta charset="utf-8">
+  <title>表格导出</title>
+  <style type="text/css">
+    button{
+      padding: 10px 5px;
+      font-size: 16px;
+    }
+    table{
+      width: 600px;
+      min-height: 60px;
+      overflow: hidden;
+      border-right: 1px solid #000;
+      border-bottom: 1px solid #000;
+    }
+    table td{
+      width: 100px;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      border-left: 1px solid #000;
+      border-top: 1px solid #000;
+    }
+  </style>
+</head>
+<body>
+  <button onclick="exportTables()">数据导出</button>
+  <table class="search-list" cellspacing="0" id="yesterday-date-content" style="margin-bottom: 30px;">
+    <tbody>
+      <tr class="search-list-title">  
+        <td>会员访问量</td>  
+        <td>访客总量</td>  
+        <td>总访问量</td>  
+        <td>新注册数量</td>  
+        <td>当日会员总量</td>  
+        <td>日期</td>
+      </tr>
+      <tr class="search-list-menu">  
+        <td>419</td>  
+        <td>90</td>  
+        <td>1007</td>  
+        <td>8</td>  
+        <td>14</td>  
+        <td>2018-3-8</td>
+      </tr>
+    </tbody>
+  </table>
+  <script src="js/exceljs.min.js"></script>
+  <script src="js/table2excel.core.js"></script>
+  <script>
+    function exportTables () {
+      new Table2Excel('#yesterday-date-content').export()
+    }
+  </script>
+</body>
+</html>
+
